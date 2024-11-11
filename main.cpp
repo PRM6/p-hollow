@@ -1,6 +1,5 @@
 #include <iostream>
 #include <Windows.h>
-#include <string>
 
 #include "header/shellcode.h"
 #include "header/logger.h"
