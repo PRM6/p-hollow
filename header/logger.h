@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <windows.h>
-#include <string>
 #include <cstdarg>
 #include <cstdio>
 
@@ -16,9 +15,8 @@ public:
         Warning
     };
 
-    static void Init(const std::string& labelText, WORD labelColor, WORD infoColor, WORD successColor, WORD errorColor, WORD warningColor) {
+    static void Init(const std::string& /*labelText*/, WORD labelColor, WORD infoColor, WORD successColor, WORD errorColor, WORD warningColor) {
         hConsole_ = GetStdHandle(STD_OUTPUT_HANDLE);
-        labelText_ = labelText;
         labelColor_ = labelColor;
         infoColor_ = infoColor;
         successColor_ = successColor;
@@ -48,7 +46,6 @@ public:
 
 private:
     static HANDLE hConsole_;
-    static std::string labelText_;
     static WORD labelColor_;
     static WORD infoColor_;
     static WORD successColor_;
@@ -79,7 +76,6 @@ private:
 };
 
 HANDLE Logger::hConsole_ = nullptr;
-std::string Logger::labelText_ = "";
 WORD Logger::labelColor_ = 0;
 WORD Logger::infoColor_ = 0;
 WORD Logger::successColor_ = 0;
